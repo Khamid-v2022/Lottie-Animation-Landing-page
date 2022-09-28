@@ -1,10 +1,8 @@
 /*CONVERT TO HORIZONTAL SCROLL*/
 
 let prevHoveredEls = [];
-var curr_state = "close";
 
 const container = document.querySelector("#container");
-// detect scroll
 container.addEventListener("wheel", (e) => {
   e.preventDefault();
   container.scrollLeft += e.deltaY + e.deltaX;
@@ -21,13 +19,11 @@ container.addEventListener("wheel", (e) => {
   );
 
   hoveredEls.forEach((el) => {
-    if(curr_state != 'open')
-      el.handlePointerEnter();
+    el.handlePointerEnter();
   });
 
   notHoveredEls.forEach((el) => {
-    if(curr_state != 'close')
-      el.handlePointerLeave();
+    el.handlePointerLeave();
   });
 
   prevHoveredEls = hoveredEls;
@@ -197,9 +193,8 @@ function setUpBtns() {
       }
     };
 
-    // detect mouse over
-    el.addEventListener("pointerenter", () => el.handlePointerEnter());
-    el.addEventListener("pointerleave", () => el.handlePointerLeave());
+   el.addEventListener("pointerenter", () => el.handlePointerEnter());
+   el.addEventListener("pointerleave", () => el.handlePointerLeave());
   });
 }
 
@@ -227,60 +222,29 @@ var shareFlag = true;
 
 var animationInterval = setInterval(function(){
   if(quee.length > 0){
-    console.log(shareFlag, quee);
     for(let i = 0; i < quee.length; i++){
       if(shareFlag){
         if(quee[i] == 'close'){
           shareFlag = false;
           buttonAnimation(view, -1, 10);
-          quee.splice(i, 1);
-          curr_state = 'close';
           
           setTimeout(function(){
             shareFlag = true;
-          }, 50);
+            quee.splice(i, 1);
+          }, 200);
         } else {
           shareFlag = false;
           buttonAnimation(view, 1, 10);
-          
-          quee.splice(i, 1);
-          curr_state = 'open';
-          
           setTimeout(function(){
             shareFlag = true;
-          }, 50);
+            quee.splice(i, 1);
+
+          }, 0);
         }
       }
     }
   }
-}, 50);
-
-
-/*SCROLL-MOUSEMOVE*/
-
-var containerScroll = document.getElementById("container");
-
-containerScroll.onscroll = function(){     
-  document.getElementById("fade").style.zIndex = "7";
-};
-
-containerScroll.onmousemove = function(){   
-  document.getElementById("fade").style.zIndex = "0";  
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}, 5);
 
 
 /*HEADERS RIGHT*/
@@ -756,5 +720,16 @@ new Waypoint({
   }
 });
 
+/*SCROLL-MOUSEMOVE*/
+
+var containerScroll = document.getElementById("container");
+
+containerScroll.onscroll = function(){     
+  document.getElementById("fade").style.zIndex = "7";
+};
+
+containerScroll.onmousemove = function(){   
+  document.getElementById("fade").style.zIndex = "0";  
+};
 
 

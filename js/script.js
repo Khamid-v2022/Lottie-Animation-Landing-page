@@ -1,8 +1,10 @@
 /*CONVERT TO HORIZONTAL SCROLL*/
 
 let prevHoveredEls = [];
+var curr_state = "close";
 
 const container = document.querySelector("#container");
+// detect scroll
 container.addEventListener("wheel", (e) => {
   e.preventDefault();
   container.scrollLeft += e.deltaY + e.deltaX;
@@ -19,11 +21,13 @@ container.addEventListener("wheel", (e) => {
   );
 
   hoveredEls.forEach((el) => {
-    el.handlePointerEnter();
+    if(curr_state != 'open')
+      el.handlePointerEnter();
   });
 
   notHoveredEls.forEach((el) => {
-    el.handlePointerLeave();
+    if(curr_state != 'close')
+      el.handlePointerLeave();
   });
 
   prevHoveredEls = hoveredEls;
@@ -193,8 +197,9 @@ function setUpBtns() {
       }
     };
 
-   el.addEventListener("pointerenter", () => el.handlePointerEnter());
-   el.addEventListener("pointerleave", () => el.handlePointerLeave());
+    // detect mouse over
+    el.addEventListener("pointerenter", () => el.handlePointerEnter());
+    el.addEventListener("pointerleave", () => el.handlePointerLeave());
   });
 }
 
@@ -227,24 +232,54 @@ var animationInterval = setInterval(function(){
         if(quee[i] == 'close'){
           shareFlag = false;
           buttonAnimation(view, -1, 10);
+          quee.splice(i, 1);
+          curr_state = 'close';
           
           setTimeout(function(){
             shareFlag = true;
-            quee.splice(i, 1);
-          }, 200);
+          }, 50);
         } else {
           shareFlag = false;
           buttonAnimation(view, 1, 10);
+          
+          quee.splice(i, 1);
+          curr_state = 'open';
+          
           setTimeout(function(){
             shareFlag = true;
-            quee.splice(i, 1);
-
-          }, 0);
+          }, 50);
         }
       }
     }
   }
-}, 5);
+}, 50);
+
+
+/*SCROLL-MOUSEMOVE*/
+
+var containerScroll = document.getElementById("container");
+
+containerScroll.onscroll = function(){     
+  document.getElementById("fade").style.zIndex = "7";
+};
+
+containerScroll.onmousemove = function(){   
+  document.getElementById("fade").style.zIndex = "0";  
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*HEADERS RIGHT*/
@@ -720,16 +755,5 @@ new Waypoint({
   }
 });
 
-/*SCROLL-MOUSEMOVE*/
-
-var containerScroll = document.getElementById("container");
-
-containerScroll.onscroll = function(){     
-  document.getElementById("fade").style.zIndex = "7";
-};
-
-containerScroll.onmousemove = function(){   
-  document.getElementById("fade").style.zIndex = "0";  
-};
 
 

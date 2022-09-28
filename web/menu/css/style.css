@@ -1,0 +1,613 @@
+::-webkit-scrollbar {
+    height: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+@font-face {
+  font-family: "HelveticaNeue";
+  src: url('../../fonts/HelveticaNeue.woff2') format('woff2'),
+       url('../../fonts/HelveticaNeue.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HelveticaNeue-Thin";
+  src: url('../../fonts/HelveticaNeue-Thin.woff2') format('woff2'),
+       url('../../fonts/HelveticaNeue-Thin.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'helvetica_neuelight';
+    src: url('../../fonts/helveticaneuelight.woff2') format('woff2'),
+         url('../../fonts/helveticaneuelight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: "HelveticaNeue-UltraLight";
+  src: url('../../fonts/HelveticaNeue-UltraLight.woff2') format('woff2'),
+       url('../../fonts/HelveticaNeue-UltraLight.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+    color: #f5f5f5;
+    font-size: 1.63vh;
+    font-family: "HelveticaNeue";
+    font-weight: normal;
+    font-style: normal;
+}
+
+#menubutton {
+  position: fixed;
+  top: 20px;
+  left: 22px;
+  height: 6vh;
+  width: 4vh;
+  z-index: 4;
+  cursor: pointer;
+}
+
+#homebutton {
+  position: fixed;
+  bottom: 20px;
+  left: 22px;
+  height: 17vh;
+  width: 4vh;
+  z-index: 4;
+  cursor: pointer;
+}
+
+#MMW {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 1800px;
+  width: 3200px;
+  z-index: 0;
+}
+
+#MHW {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 1800px;
+  width: 3200px;
+  z-index: 0;
+}
+
+#MBW {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 1800px;
+  width: 3200px;
+  z-index: 0;
+}
+
+.pageclickable {
+    cursor: pointer;
+}
+
+#container{
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+#section1 {
+  position: relative;
+  display:  flex;
+  height: 100%;
+  width: 100vw;
+}
+
+.leftheader{
+    position: fixed;
+    left: 22px;
+    top: 20px;
+    height: calc(100% - 40px);
+    width: 4vh;
+    border-left-width:  1px;
+    border-right-width:  1px;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-left-color: #f5f5f5;
+    border-right-color: #f5f5f5;
+    background-color: #08090A;
+    z-index: 3;
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+#backbutton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 6vh;
+  width: 4vh;
+  z-index: 4;
+  cursor: pointer;
+}
+
+
+#interact {
+    position: relative;
+    top:  20px;
+    left: 52px;
+    height: auto;
+    width: 92vh;
+    background-color: #0096FF;
+    opacity: .33;
+    opacity: 0;
+}
+
+#one {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 33%;
+    height: 12%;
+    background-color: #FFC0CB;
+    opacity: .66;
+    cursor: pointer;
+}
+
+#about {
+    position: absolute;
+    top: 0px;
+    left: 33%;
+    width: 33%;
+    height: 5%;
+    background-color: #6a0dad;
+    opacity: .66;
+    cursor: pointer;
+}
+
+#onea {
+    position: absolute;
+    top: 0px;
+    left: 66%;
+    width: 16%;
+    height: 5%;
+    background-color: #FFC0CB;
+    opacity: .66;
+    cursor: pointer;
+}
+
+#two {
+    position: absolute;
+    top: 13%;
+    left: 0px;
+    width: 33%;
+    height: 12%;
+    background-color: #6a0dad;
+    opacity: .66;
+    cursor: pointer;
+}
+
+#services {
+    position: absolute;
+    top: 13%;
+    left: 33%;
+    width: 33%;
+    height: 5%;
+    background-color: #FFC0CB;
+    opacity: .66;
+    cursor: pointer;
+}
+
+#twoa {
+    position: absolute;
+    top: 13%;
+    left: 66%;
+    width: 16%;
+    height: 5%;
+    background-color: #6a0dad;
+    opacity: .66;
+    cursor: pointer;
+}
+
+#twob {
+    position: absolute;
+    top: 18%;
+    left: 66%;
+    width: 16%;
+    height: 5%;
+    background-color: #FFC0CB;
+    opacity: .66;
+    cursor: pointer;
+}
+
+#twoc {
+    position: absolute;
+    top: 13%;
+    left: 86%;
+    width: 16%;
+    height: 5%;
+    background-color: #6a0dad;
+    opacity: .66;
+    cursor: pointer;
+}
+
+#twod {
+    position: absolute;
+    top: 18%;
+    left: 86%;
+    width: 16%;
+    height: 5%;
+    background-color: #FFC0CB;
+    opacity: .66;
+    cursor: pointer;
+}
+
+#three {
+    position: absolute;
+    top: 26%;
+    left: 0px;
+    width: 33%;
+    height: 12%;
+    background-color: #6a0dad;
+    opacity: .66;
+    cursor: pointer;
+}
+
+#work {
+    position: absolute;
+    top: 26%;
+    left: 33%;
+    width: 33%;
+    height: 5%;
+    background-color: #FFC0CB;
+    opacity: .66;
+    cursor: pointer;
+}
+
+#threea {
+    position: absolute;
+    top: 26%;
+    left: 66%;
+    width: 16%;
+    height: 6%;
+    background-color: #6a0dad;
+    opacity: .66;
+    cursor: pointer;
+}
+
+#threeb {
+    position: absolute;
+    top: 33%;
+    left: 66%;
+    width: 16%;
+    height: 6%;
+    background-color: #FFC0CB;
+    opacity: .66;
+    cursor: pointer;
+}
+
+#threec {
+    position: absolute;
+    top: 40%;
+    left: 66%;
+    width: 16%;
+    height: 6%;
+    background-color: #6a0dad;
+    opacity: .66;
+    cursor: pointer;
+}
+
+#threed {
+    position: absolute;
+    top: 26%;
+    left: 86%;
+    width: 16%;
+    height: 6%;
+    background-color: #6a0dad;
+    opacity: .66;
+    cursor: pointer;
+}
+
+#threee {
+    position: absolute;
+    top: 33%;
+    left: 86%;
+    width: 16%;
+    height: 6%;
+    background-color: #FFC0CB;
+    opacity: .66;
+    cursor: pointer;
+}
+
+#threef {
+    position: absolute;
+    top: 40%;
+    left: 86%;
+    width: 16%;
+    height: 6%;
+    background-color: #6a0dad;
+    opacity: .66;
+    cursor: pointer;
+}
+
+#four {
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    width: 33%;
+    height: 12%;
+    background-color: #6a0dad;
+    opacity: .66;
+    cursor: pointer;
+}
+
+#process {
+    position: absolute;
+    top: 50%;
+    left: 33%;
+    width: 33%;
+    height: 5%;
+    background-color: #FFC0CB;
+    opacity: .66;
+    cursor: pointer;
+}
+
+#foura {
+    position: absolute;
+    top: 50%;
+    left: 66%;
+    width: 16%;
+    height: 5%;
+    background-color: #6a0dad;
+    opacity: .66;
+    cursor: pointer;
+}
+
+#fourb {
+    position: absolute;
+    top: 55%;
+    left: 66%;
+    width: 16%;
+    height: 5%;
+    background-color: #FFC0CB;
+    opacity: .66;
+    cursor: pointer;
+}
+
+#fourc {
+    position: absolute;
+    top: 60%;
+    left: 66%;
+    width: 16%;
+    height: 5%;
+    background-color: #6a0dad;
+    opacity: .66;
+    cursor: pointer;
+}
+
+#fourd {
+    position: absolute;
+    top: 50%;
+    left: 86%;
+    width: 16%;
+    height: 5%;
+    background-color: #6a0dad;
+    opacity: .66;
+    cursor: pointer;
+}
+
+#foure {
+    position: absolute;
+    top: 55%;
+    left: 86%;
+    width: 16%;
+    height: 5%;
+    background-color: #FFC0CB;
+    opacity: .66;
+    cursor: pointer;
+}
+
+#fourf {
+    position: absolute;
+    top: 60%;
+    left: 86%;
+    width: 16%;
+    height: 5%;
+    background-color: #6a0dad;
+    opacity: .66;
+    cursor: pointer;
+}
+
+
+#five {
+    position: absolute;
+    top: 68%;
+    left: 0px;
+    width: 33%;
+    height: 12%;
+    background-color: #6a0dad;
+    opacity: .66;
+    cursor: pointer;
+}
+
+#contact {
+    position: absolute;
+    top: 68%;
+    left: 33%;
+    width: 33%;
+    height: 5%;
+    background-color: #FFC0CB;
+    opacity: .66;
+    cursor: pointer;
+}
+
+#fivea {
+    position: absolute;
+    top: 68%;
+    left: 66%;
+    width: 16%;
+    height: 5%;
+    background-color: #6a0dad;
+    opacity: .66;
+    cursor: pointer;
+}
+
+#fiveb {
+    position: absolute;
+    top: 73%;
+    left: 66%;
+    width: 16%;
+    height: 5%;
+    background-color: #FFC0CB;
+    opacity: .66;
+    cursor: pointer;
+}
+
+#fivec {
+    position: absolute;
+    top: 78%;
+    left: 66%;
+    width: 16%;
+    height: 5%;
+    background-color: #6a0dad;
+    opacity: .66;
+    cursor: pointer;
+}
+
+#fived {
+    position: absolute;
+    top: 68%;
+    left: 86%;
+    width: 16%;
+    height: 5%;
+    background-color: #6a0dad;
+    opacity: .66;
+    cursor: pointer;
+}
+
+#fivee {
+    position: absolute;
+    top: 73%;
+    left: 86%;
+    width: 16%;
+    height: 5%;
+    background-color: #FFC0CB;
+    opacity: .66;
+    cursor: pointer;
+}
+
+#fivef {
+    position: absolute;
+    top: 78%;
+    left: 86%;
+    width: 16%;
+    height: 5%;
+    background-color: #6a0dad;
+    opacity: .66;
+    cursor: pointer;
+}
+
+#MC1 {
+    position: absolute;
+    top:  20px;
+    left: 52px;
+    height: auto;
+    width: 92vh;
+}
+
+#lefttop {
+    position: absolute;
+    transform-origin: top left;
+    left:-.5px;
+    top:0px;
+    transform: rotate(-90deg) translateX(-100%);
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+#leftbottom {
+    position: absolute;
+    transform-origin:bottom left;
+    left:-.5px;
+    bottom:0px;
+    transform: rotate(-90deg) translateY(100%);
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+#MTR {
+    position: absolute;
+    transform-origin: top right;
+    right:20px;
+    top:20.5px;
+    transform: rotate(-90deg) translateY(-100%);
+    -webkit-font-smoothing: subpixel-antialiased;
+    opacity: 0;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: .5s;
+}
+
+#MBR {
+    position: absolute;
+    transform-origin: bottom right;
+    bottom: 19.5px;
+    right: 21px;
+    transform: rotate(-90deg) translateX(100%);
+    -webkit-font-smoothing: subpixel-antialiased;
+    z-index: 3;
+    opacity: 0;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: .5s;
+}
+
+#MHR{
+    position: absolute;
+    margin-top: 20px;
+    right: 0px;
+    height: calc(100% - 40px);
+    width: 20px;
+    border-left-width:  1px;
+    border-left-style: solid;
+    border-left-color: #f5f5f5;
+    background-color: #08090A;
+    z-index: 3;
+    opacity: 0;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: .5s;
+}
+
+#circle {
+    position: absolute;
+    width: 120px; 
+    height: 120px; 
+    border-radius: 50%;  
+    z-index: 6;
+    pointer-events: none;
+    user-select: none;
+}
+
+#view {
+    width:  120px;
+    height: 120px;
+    z-index: 7;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}

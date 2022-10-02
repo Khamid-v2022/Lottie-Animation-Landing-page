@@ -4,8 +4,8 @@ let prevHoveredEls = [];
 var curr_state = "close";
 
 let prevElId = "";
-
 const container = document.querySelector("#container");
+// detect scroll
 container.addEventListener("wheel", (e) => {
   e.preventDefault();
   container.scrollLeft += e.deltaY + e.deltaX;
@@ -13,6 +13,11 @@ container.addEventListener("wheel", (e) => {
   updateMousePos(e);
 
   let hoveredEls = document.elementsFromPoint(e.pageX, e.pageY);
+  // hoveredEls = hoveredEls.filter(
+  //   (el) =>
+  //   el.classList.contains("view-link") || el.classList.contains("email-link")
+  // );
+
   hoveredEls = hoveredEls.filter(
     (el) =>
     el.classList.contains("view-link") || el.classList.contains("no-hover")
@@ -23,7 +28,7 @@ container.addEventListener("wheel", (e) => {
   
   hoveredEls.forEach((el) => {
     let id = el.id;
-    // console.log("prev:", local_prevId, "::Now:", id);
+    console.log("prev:", local_prevId, "::Now:", id);
     
     if(local_prevId != id){
       if(local_prevId == "")
@@ -35,15 +40,14 @@ container.addEventListener("wheel", (e) => {
         quee.push('open');
       }
     }else{
-      // if(id != "")
-      //   quee.push('open');
-      // else
-      //   quee.push('close');
+      if(id != "")
+        quee.push('open');
+      else
+        quee.push('close');
     }
     local_prevId = id;
   });
   prevElId = local_prevId;
-
   // hoveredEls = hoveredEls.filter(
   //   (el) =>
   //   el.classList.contains("view-link") || el.classList.contains("email-link")
@@ -53,11 +57,13 @@ container.addEventListener("wheel", (e) => {
   // );
 
   // hoveredEls.forEach((el) => {
-  //   el.handlePointerEnter();
+  //   if(curr_state != 'open')
+  //     el.handlePointerEnter();
   // });
 
   // notHoveredEls.forEach((el) => {
-  //   el.handlePointerLeave();
+  //   if(curr_state != 'close')
+  //     el.handlePointerLeave();
   // });
 
   // prevHoveredEls = hoveredEls;
@@ -227,14 +233,15 @@ function setUpBtns() {
       }
     };
 
-   el.addEventListener("pointerenter", () => {
-    
-    el.handlePointerEnter()
-  });
-   el.addEventListener("pointerleave", () => {
-    
-    el.handlePointerLeave()
-  });
+    // detect mouse over
+    el.addEventListener("pointerenter", () => {
+      console.log("enter");
+      el.handlePointerEnter()
+    });
+    el.addEventListener("pointerleave", () => {
+      console.log("leave");
+      el.handlePointerLeave()
+    });
   });
 }
 
@@ -266,25 +273,55 @@ var animationInterval = setInterval(function(){
       if(shareFlag){
         if(quee[i] == 'close'){
           shareFlag = false;
-          buttonAnimation(view, -1, 10);
+          buttonAnimation(view, -1, 8);
+          quee.splice(i, 1);
+          curr_state = 'close';
           
           setTimeout(function(){
             shareFlag = true;
-            quee.splice(i, 1);
-          }, 200);
+          }, 100);
         } else {
           shareFlag = false;
-          buttonAnimation(view, 1, 10);
+          buttonAnimation(view, 1, 3);
+          
+          quee.splice(i, 1);
+          curr_state = 'open';
           
           setTimeout(function(){
             shareFlag = true;
-            quee.splice(i, 1);
-          }, 50);
+          }, 200);
         }
       }
     }
   }
-}, 5);
+}, 50);
+
+
+/*SCROLL-MOUSEMOVE*/
+
+// var containerScroll = document.getElementById("container");
+
+// containerScroll.onscroll = function(){     
+//   document.getElementById("fade").style.zIndex = "7";
+// };
+
+// containerScroll.onmousemove = function(){   
+//   document.getElementById("fade").style.zIndex = "0";  
+// };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*HEADERS RIGHT*/
@@ -759,3 +796,6 @@ new Waypoint({
     return window.innerWidth - 20
   }
 });
+
+
+

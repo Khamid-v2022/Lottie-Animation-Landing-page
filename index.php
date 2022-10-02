@@ -19,8 +19,8 @@
 
 <body style="margin: 0; background-color: #f5f5f5">
   <div id="container">
-    <div id="fade">
-    </div>
+    <!-- <div id="fade">
+    </div> -->
     <div id="circle">
       <div id="view" class="hoverbtn"></div>
       <div id="sayhi" class="hoverbtn"></div>
@@ -68,7 +68,7 @@
         <div id="HH2" data-anim="HH2"></div>
       </div>
 
-      <div class="content2">
+      <div class="content2 no-hover">
         <div id="HC2">
           <h2>At vero eos et accusamum iusto dignissimos ducimus qui blanditiis deleniti atque corrupti quos dolores et
             quas excepturi sint fuga. blanditiis deleniti.</h2>
@@ -91,7 +91,7 @@
         </div>
       </div>
 
-      <div class="content2">
+      <div class="content2 no-hover">
         <div id="HC3" data-anim="HC3" data-autoplay>
         </div>
         <div id="services">
@@ -108,7 +108,7 @@
         <div id="HH4" data-anim="HH4" data-autoplay></div>
       </div>
 
-      <a class="view-link" href="/web/menu/index.html">
+      <a class="view-link" id="view_link1" href="/web/menu/index.html">
         <div class="content2">
           <div id="HC4" data-anim="HC4">
           </div>
@@ -130,7 +130,7 @@
 
       <div class="header3"></div>
 
-      <a class="view-link" href="/web/menu/index.html">
+      <a class="view-link" id="view_link2" href="/web/menu/index.html">
         <div class="content2">
           <div id="HC5" data-anim="HC5">
           </div>
@@ -150,7 +150,7 @@
 
       <div class="header3"></div>
 
-      <a class="view-link" href="/web/menu/index.html">
+      <a class="view-link" id="view_link3" href="/web/menu/index.html">
         <div class="content2">
           <div id="HC6" data-anim="HC6">
           </div>
@@ -170,7 +170,7 @@
 
       <div class="header3"></div>
 
-      <a class="view-link" href="/web/menu/index.html">
+      <a class="view-link" id="view_link4" href="/web/menu/index.html">
         <div class="content2">
           <div id="HC7" data-anim="HC7">
           </div>
@@ -190,7 +190,7 @@
 
       <div class="header3"></div>
 
-      <a class="view-link" href="/web/menu/index.html">
+      <a class="view-link"  id="view_link5" href="/web/menu/index.html">
         <div class="content2">
           <div id="HC8" data-anim="HC8">
           </div>
@@ -209,7 +209,7 @@
       </a>
 
       <div class="header3"></div>
-      <a class="view-link" href="/web/menu/index.html">
+      <a class="view-link"  id="view_link6" href="/web/menu/index.html">
         <div class="content2">
           <div id="HC9" data-anim="HC9">
           </div>
@@ -231,7 +231,7 @@
         <div id="HH5" data-anim="HH5"></div>
       </div>
 
-      <div class="content2">
+      <div class="content2 no-hover">
         <div id="HC10" data-anim="HC10">
         </div>
         <div id="process">
